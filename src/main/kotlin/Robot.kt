@@ -1,4 +1,6 @@
 class Robot: Human() {
+    var rlevel = 1
+    override var level = rlevel
     var battery = 100
     override var pool = battery
     override var guard = 50
@@ -15,5 +17,6 @@ class Robot: Human() {
 
     }
 
-
 }
+
+
