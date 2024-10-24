@@ -1,20 +1,18 @@
 abstract class Human() {
     open var level: Int = 1
     var health: Int = 100
-    var power: Int = (0..5).random()
+    var power = 0..15
     open var pool: Int = 100
     open var guard: Int = 100
 
 
     fun getDamage(enemy: Human){
         if (guard > 0)
-            guard -= enemy.power
-        else {
-            health -= enemy.power
-        }
+            guard -= enemy.power.random()
+        else
+            health -= enemy.power.random()
     }
     fun attack(target: Human){
-        power = (0..15).random()
         if (target.guard <= 0){
             target.guard = 0
         }
@@ -24,7 +22,6 @@ abstract class Human() {
     }
 
     open fun skill(target: Human){
-        power = (10..20).random()
         target.getDamage(this)
     }
 
@@ -34,7 +31,7 @@ abstract class Human() {
         if (level > level0){
             enemy.health += 10
             enemy.pool += 40
-            enemy.power += 5
+            enemy.power = 0..power.last() + 5
             enemy.guard = 100
         }
     }

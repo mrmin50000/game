@@ -1,12 +1,10 @@
 class Knight: Human() {
-    var defence = 90
-    override var pool = defence
+    override var pool = 100
     override var guard = 100
     override fun skill(target: Human) {
-        if (defence > 0){
-            defence-=30
-            pool = defence
-            guard += 30
+        if (pool > 0){
+            pool-=50
+            guard += 50
         }
         else{
             println("(((")

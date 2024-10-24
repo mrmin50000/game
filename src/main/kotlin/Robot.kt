@@ -1,14 +1,10 @@
 class Robot: Human() {
-    var rlevel = 1
-    override var level = rlevel
-    var battery = 100
-    override var pool = battery
+    override var pool = 100
     override var guard = 50
     override fun skill(target: Human) {
-        if (battery > 0){
-            battery-=50
-            pool = battery
-            power = (40..60).random()
+        if (pool > 0){
+            pool-=50
+            power = power.last() + 15..power.last() + 50
             target.getDamage(this)
         }
         else{

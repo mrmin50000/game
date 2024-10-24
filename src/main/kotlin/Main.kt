@@ -1,7 +1,7 @@
 fun bot(x:Human, y:Human){
     if (x is Wizard){
         if ((x.health <= 50) and (x.pool > 0)) {
-            x.skill(x)
+            x.skill(y)
             println("2\n")
         }
         else {
@@ -14,8 +14,7 @@ fun bot(x:Human, y:Human){
             x.skill(x)
             println("2\n")
         }
-        else{
-            x.attack(y)
+        else{            x.attack(y)
             println("1\n")
         }
     }

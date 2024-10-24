@@ -1,16 +1,15 @@
 class Wizard: Human() {
-    var mana = 100
-    override var pool = mana
+    override var pool = 100
     override var guard = 20
-    override fun skill(target: Human) {
-        if (mana > 0){
-            mana-=20
-            pool = mana
-            health += 50
+    override fun skill(target: Human){
+        if (pool > 0) {
+            pool -= 25
+            health += 10
         }
-        else{
-            println("no")
-        }
+        else
+            println("sosihuy")
     }
 
-}
+
+    }
+
